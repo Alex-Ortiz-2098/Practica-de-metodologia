@@ -20,15 +20,15 @@ namespace Practica
 
             // Ejercicio 9(Practica 2)
             Pila pila = new Pila();
-            Llenar(pila,1);
-            CambiarEstrategia(pila, new PorNombre());
+            Llenar(pila,2);
+            /*CambiarEstrategia(pila, new PorNombre());
             Informar(pila, 1);
             CambiarEstrategia(pila, new PorLegajo());
             Informar(pila, 1);
             CambiarEstrategia(pila, new PorDni());
             Informar(pila, 1);
-            CambiarEstrategia(pila, new PorPromedio());
-            Informar(pila, 1);
+            CambiarEstrategia(pila, new PorPromedio());*/
+            Informar(pila, 2);
 
 
 
@@ -55,13 +55,6 @@ namespace Practica
             Console.WriteLine("El Menor Elemento es : " + c.Minimo());
             Console.WriteLine("El Mayor Elemento es: " + c.Maximo());
             Console.WriteLine("-------------------------------");
-
-
-            if (opcion == 1)
-            {
-                Console.WriteLine("Para hacer la busqueda solicitada debe ingresar nombre, dni, legajo, promedio UNO la vez ");
-                Console.WriteLine("Recuerde el orden dado pára evitar errores.");
-            }
                 Comparable com = FabricaDeComparables.crearPorTeclado(opcion); // escribo todo el comparable para luego buscarlo
                 
                 if (c.Contiene(com))

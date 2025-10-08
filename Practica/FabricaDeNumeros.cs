@@ -7,13 +7,11 @@ namespace Practica
     {
         public override Comparable crearAleatorio()
         {
-            int valor = GeneradorDeDatosAleatorios.numeroAleatorio(100);
-            return new Numero(valor);
+            return new Numero(DatoAle.numeroAleatorio(100));
         }
         public override Comparable crearPorTeclado()
         {
-            int valor = LectorDeDatos.numeroPorTeclado();
-            return new Numero(valor);
+            return new Numero(DatoTecla.numeroPorTeclado());
         }
 
     }

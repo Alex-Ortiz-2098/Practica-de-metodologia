@@ -40,3 +40,4 @@
 /home/alexadmin/Documentos/Metodologia/Practica/Practica/obj/Debug/net8.0/Practica.pdb
 /home/alexadmin/Documentos/Metodologia/Practica/Practica/obj/Debug/net8.0/Practica.genruntimeconfig.cache
 /home/alexadmin/Documentos/Metodologia/Practica/Practica/obj/Debug/net8.0/ref/Practica.dll
+/home/alexadmin/Documentos/Metodologia/Practica/Practica/obj/Debug/net8.0/Practica.sourcelink.json

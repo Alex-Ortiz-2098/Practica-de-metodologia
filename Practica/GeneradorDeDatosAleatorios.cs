@@ -6,12 +6,12 @@ namespace Practica
     public class GeneradorDeDatosAleatorios
     {
         private static Random random = new Random();
-        public static int numeroAleatorio(int max) //Devuelve un número aleatorio entre 0 y ‘max’
+        public int numeroAleatorio(int max) //Devuelve un número aleatorio entre 0 y ‘max’
         {
             Random random = new Random();
             return random.Next(0, max);
         }
-        public static string stringAleatorio(int cant) //Devuelve un string aleatorio de ‘cant’ caracteres
+        public string stringAleatorio(int cant) //Devuelve un string aleatorio de ‘cant’ caracteres
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             Random random = new Random();

@@ -18,6 +18,10 @@ namespace Practica
                     break;
 
                 case 2:
+                    fabrica = new FabricaDeProfesores();
+                    break;
+                
+                case 3:
                     fabrica = new FabricaDeNumeros();
                     break;
 
@@ -39,6 +43,10 @@ namespace Practica
                     break;
 
                 case 2:
+                    fabrica = new FabricaDeProfesores();
+                    break;
+
+                case 3:
                     fabrica = new FabricaDeNumeros();
                     break;
 

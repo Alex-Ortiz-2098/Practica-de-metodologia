@@ -24,7 +24,7 @@ namespace Practica
         public bool SosMenor(Comparable c1, Comparable c2)
         {
             return string.Compare(((Alumno)c1).getNombre(), ((Alumno)c2).getNombre()) < 0;
-         }
+        }
     }
 
     public class PorDni : PoliticaDeComparacion  //POLITICA POR DNI
@@ -40,8 +40,8 @@ namespace Practica
         public bool SosMenor(Comparable c1, Comparable c2)
         {
             return ((Alumno)c1).getDNI() < ((Alumno)c2).getDNI();
-         }
-        
+        }
+
     }
 
     public class PorPromedio : PoliticaDeComparacion //POLITICA POR PROMEDIO
@@ -58,7 +58,7 @@ namespace Practica
         public bool SosMenor(Comparable c1, Comparable c2)
         {
             return ((Alumno)c1).getPromedio() < ((Alumno)c2).getPromedio();
-         }
+        }
     }
 
     public class PorLegajo : PoliticaDeComparacion //POLITICA POR LEGAJO
@@ -77,4 +77,23 @@ namespace Practica
             return ((Alumno)c1).getlegajo() < ((Alumno)c2).getlegajo();
         }
     }
+
+
+    public class PorAntiguedad : PoliticaDeComparacion //POLITICA POR ANTIGUEDAD
+    {
+        public bool SosIgual(Comparable c1, Comparable c2)
+        {
+            return ((Profesor)c1).getAntiguedad() == ((Profesor)c2).getAntiguedad();
+        }
+        public bool SosMayor(Comparable c1, Comparable c2)
+        {
+            return ((Profesor)c1).getAntiguedad() > ((Profesor)c2).getAntiguedad();
+        }
+
+        public bool SosMenor(Comparable c1, Comparable c2)
+        {
+            return ((Profesor)c1).getAntiguedad() < ((Profesor)c2).getAntiguedad();
+        }
+    }
 }
+
