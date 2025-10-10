@@ -18,9 +18,10 @@ namespace Practica
             ImprimirElementos(cola);
             ImprimirElementos(conjunto);*/
 
+
             // Ejercicio 9(Practica 2)
-            Pila pila = new Pila();
-            Llenar(pila,2);
+            //Pila pila = new Pila();
+            //Llenar(pila,1);
             /*CambiarEstrategia(pila, new PorNombre());
             Informar(pila, 1);
             CambiarEstrategia(pila, new PorLegajo());
@@ -28,7 +29,20 @@ namespace Practica
             CambiarEstrategia(pila, new PorDni());
             Informar(pila, 1);
             CambiarEstrategia(pila, new PorPromedio());*/
-            Informar(pila, 2);
+            //Informar(pila, 2);
+
+            //Ejercicio 9(Practica 3) DEBIA MODIFICAR PARA COMPARAR POR ANTIGUEDAD A LOS PROFESORES
+            //Pila pila = new Pila();
+            // Llenar(pila,2);
+            // Informar(pila, 2);
+
+            //Ejercicio 14(Practica 3)
+            Profesor profesor = new Profesor("Carlos", 12345678, 15);
+            LlenarAula(profesor);
+            DictadoDeClases(profesor);
+            Console.WriteLine("\n--- Fin del dictado de clases ---");
+           
+
 
 
 
@@ -44,6 +58,18 @@ namespace Practica
             {
                 Comparable comparable = FabricaDeComparables.crearAleatorio(opcion);
                 cole.Agregar(comparable);
+                i++;
+            }
+        }
+
+        public static void LlenarAula(Profesor p)
+        {
+            int i = 0;
+
+            while (i < 20)
+            {
+                Alumno alumno = (Alumno)FabricaDeComparables.crearAleatorio(1); //Creacion de Alumnos
+                p.AgregarObservador(alumno);
                 i++;
             }
         }
@@ -100,6 +126,15 @@ namespace Practica
 
                 }                  
                    
+            }
+        }
+
+        public static void DictadoDeClases(Profesor p)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                p.HablarALaClase();
+                p.EscribirEnElPizarron();
             }
         }
         

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Practica
 {
-    public class Alumno : Persona
+    public class Alumno : Persona, Observador
     {
         private int legajo;
         private int promedio;
@@ -67,6 +67,17 @@ namespace Practica
         {
             Alumno aux = (Alumno)c;  // casteo
             return this.POLITICA.SosMayor(this, aux);  // Dirige la funcion a Politica de comparacion con la politica indicada
+        }
+
+        //IMPLEMENTACION DE LA INTERFACE OBERSERVADOR
+
+        public void Actualizar(Observado o)
+        {
+            if (((Profesor)o).getHablando())
+            {
+                this.PrestarAtencion();
+            }
+            else{ this.Distraerse(); }
         }
 
     }
