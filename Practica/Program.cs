@@ -37,17 +37,42 @@ namespace Practica
             // Informar(pila, 2);
 
             //Ejercicio 14(Practica 3)
-            Profesor profesor = new Profesor("Carlos", 12345678, 15);
-            LlenarAula(profesor);
-            DictadoDeClases(profesor);
-            Console.WriteLine("\n--- Fin del dictado de clases ---");
-           
+            //Profesor profesor = new Profesor("Carlos", 12345678, 15);
+            //LlenarAula(profesor);
+            //DictadoDeClases(profesor);
+            //Console.WriteLine("\n--- Fin del dictado de clases ---");
+
+            //Ejercicio 4 y Ejercicio 8 con sus modificaciones(Practica 4) 
+            Teacher teacher = new Teacher();
+            AgregarStudent(teacher);
+            teacher.teachingAClass();
+
+            //Ejercicio 7(Practica 4) PRUEBA DE EJEMPLO
+            //StudentsFactory fabrica = new StudentsFactory();
+            //Student s = (Student)fabrica.crearAleatorio();
+            //Console.WriteLine(s.showResult());
+
 
 
 
 
             Console.WriteLine("Hola, mundo!");
             Console.ReadKey();
+        }
+
+        public static void AgregarStudent(Teacher teacher) // Agrega 20 Student(AlumnoAdapter), 10 Alumnos y 10 MuyEstudioso
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Student alumno = (Student)FabricaDeComparables.crearAleatorio(5); //Student
+                teacher.goToClass(alumno);
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                Student alumno = (Student)FabricaDeComparables.crearAleatorio(6); //StudentMuyEstudiosos
+                teacher.goToClass(alumno);
+
+            }
         }
 
         public static void Llenar(Coleccionable cole, int opcion)
@@ -121,7 +146,7 @@ namespace Practica
                 Comparable elem = x.actual();// elem es Comparable
                 if (elem is Alumno) // chequeo de tipo
                 {
-                    ((Alumno)elem).POLITICA = ite; // casteo seguro
+                    ((IAlumno)elem).POLITICA = ite; // casteo seguro
                     x.siguiente();
 
                 }                  

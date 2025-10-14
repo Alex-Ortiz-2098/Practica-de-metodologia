@@ -6,22 +6,28 @@ namespace Practica
     public class Persona : Comparable
     {
         protected string nombre;
+        protected string Apellido;
         protected int dni;
 
-        public Persona(string n, int d)
+        public Persona(string n,string a, int d)
         {
             this.nombre = n.ToLower();
+            this.Apellido = a.ToLower();
             this.dni = d;
 
         }
 
-        public string getNombre() //Devuelve la variable nombre
+        public virtual string getNombre() //Devuelve la variable nombre
         {
             return this.nombre;
         }
+        public virtual string getApellido() //Devuelve la variable nombre
+        {
+            return this.Apellido;
+        }
 
 
-        public int getDNI() //Devuelve la variable dni
+        public virtual int getDNI() //Devuelve la variable dni
         {
             return this.dni;
         }

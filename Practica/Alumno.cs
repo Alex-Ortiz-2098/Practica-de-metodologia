@@ -3,15 +3,32 @@ using System.Collections.Generic;
 
 namespace Practica
 {
-    public class Alumno : Persona, Observador
+    public class Alumno : Persona, Comparable,  Observador, IAlumno
     {
         private int legajo;
         private int promedio;
         private PoliticaDeComparacion politica = new PorNombre();
-        public Alumno(string n, int d, int l, int p) : base(n, d)
+
+        private int Calificacion;
+        public Alumno(string n, string a, int d, int l, int p) : base(n, a, d)
         {
             this.legajo = l;
             this.promedio = p;
+        }
+
+        public override string getNombre() //Devuelve la variable nombre
+        {
+            return this.nombre;
+        }
+        public override string getApellido() //Devuelve la variable nombre
+        {
+            return this.Apellido;
+        }
+
+
+        public override int getDNI() //Devuelve la variable dni
+        {
+            return this.dni;
         }
 
         public int getlegajo() //Devuelve la variable Legajo
@@ -24,6 +41,17 @@ namespace Practica
             return this.promedio;
         }
 
+        public int getCalificacion() //devuelve la Calificacion del Alumno
+        {
+            return this.Calificacion;
+
+        }
+
+        public void setCalificacion(int cal)
+        {
+            this.Calificacion = cal; 
+        }
+
         public PoliticaDeComparacion POLITICA //devuelve y envia la Politica para hacer los cambios o imgresar por defecto
         {
              get { return politica; }    
@@ -32,7 +60,7 @@ namespace Practica
 
         public override string ToString() //sirve para definir cómo se representa un objeto como texto
         {
-            return "Nombre: "+nombre+", Dni: "+dni+", Legajo: " +legajo+", Promedio: "+promedio;
+            return "Nombre: "+nombre+"Nombre: "+Apellido+", Dni: "+dni+", Legajo: " +legajo+", Promedio: "+promedio;
 ;
         }
 
@@ -49,23 +77,36 @@ namespace Practica
             Console.WriteLine(distracciones[rand.Next(0, 2)]);
         }
 
-        //IMPLEMENTACION DE INTERFACE
+        public virtual int  responderPregunta(int pregunta) 
+        {
+            Random rand = new Random();
+            return rand.Next(1, 4); // retorna 1, 2 o 3
+        }
+
+        public string mostrarCalificacion()
+        {
+            return ("Nombre y Apellido: " + nombre + " " + Apellido + ", Ultima Calificacion: " + Calificacion);
+        }
+
+        /*IMPLEMENTACION DE INTERFACE
+        ANTIGUAMENTE utilizaba ALUMNO como casteo pero a raiz de tener que hacr los decoreitor empece a trabajar los casteos
+        con IAlumno (INTERFACE ALUMNO)*/
 
         public override bool SosIgual(Comparable c) //Devuelve si es Igual atravez de un booleano usando una la Coleccion
         {
-            Alumno aux = (Alumno)c;  // casteo
+            IAlumno aux = (IAlumno)c;  // casteo
             return this.POLITICA.SosIgual(this, aux);  // Dirige la funcion a Politica de comparacion con la politica indicada
         }
 
         public override bool SosMenor(Comparable c) //Devuelve si es Menor atravez de un booleano usando una la Coleccion 
         {
-            Alumno aux = (Alumno)c;  // casteo
+            IAlumno aux = (IAlumno)c;  // casteo
             return this.POLITICA.SosMenor(this, aux);  // Dirige la funcion a Politica de comparacion con la politica indicada
         }
 
         public override bool SosMayor(Comparable c) //Devuelve si es Mayor atravez de un booleano usando una la Coleccion
         {
-            Alumno aux = (Alumno)c;  // casteo
+            IAlumno aux = (IAlumno)c;  // casteo
             return this.POLITICA.SosMayor(this, aux);  // Dirige la funcion a Politica de comparacion con la politica indicada
         }
 
@@ -77,8 +118,10 @@ namespace Practica
             {
                 this.PrestarAtencion();
             }
-            else{ this.Distraerse(); }
+            else { this.Distraerse(); }
         }
+
+        
 
     }
 }

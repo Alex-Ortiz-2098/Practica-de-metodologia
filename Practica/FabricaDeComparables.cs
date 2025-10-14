@@ -25,6 +25,19 @@ namespace Practica
                     fabrica = new FabricaDeNumeros();
                     break;
 
+                case 4:
+                    fabrica = new FabricaDeAlumnosMuyEstudiosos();
+                    break;
+
+                case 5:
+                    fabrica = new StudentsFactory();
+                    break; 
+                
+                case 6:
+                    fabrica = new StudentsMuyEstudiososFactory();
+                    break; 
+
+
                 default:
                     Console.WriteLine("Opcion invalida");
                     break;
@@ -49,6 +62,18 @@ namespace Practica
                 case 3:
                     fabrica = new FabricaDeNumeros();
                     break;
+
+                case 4:
+                    fabrica = new FabricaDeAlumnosMuyEstudiosos();
+                    break;
+
+                case 5:
+                    fabrica = new StudentsFactory();
+                    break; 
+                
+                case 6:
+                    fabrica = new StudentsMuyEstudiososFactory();
+                    break; 
 
                 default:
                     Console.WriteLine("Opcion invalida");

@@ -13,9 +13,8 @@ namespace Practica
 
         private bool Hablando; 
         
-        public Profesor(string n, int d, int a) : base(n, d)
+        public Profesor(string n,string AP, int d, int a) : base(n, AP, d)
         {
-            this.nombre = n;
             this.dni = d;
             this.antiguedad = a;
             this.AlumnosObservados = new List<Observador>();
@@ -40,7 +39,7 @@ namespace Practica
 
         public override string ToString() //sirve para definir cómo se representa un objeto como texto
         {
-            return "Nombre: " + nombre + ", Dni: " + dni + ", Antiguedad: " + antiguedad;
+            return "Nombre: " + nombre + "Apellido: " + Apellido + ", Dni: " + dni + ", Antiguedad: " + antiguedad;
         }
 
         public void HablarALaClase()
