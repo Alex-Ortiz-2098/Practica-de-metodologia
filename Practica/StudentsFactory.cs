@@ -8,8 +8,7 @@ namespace Practica
         //Este método crea un Student aleatorio, decorado y adaptado
         public override Comparable crearAleatorio()
         {
-           Alumno alumnoBase = (Alumno)base.crearAleatorio(); //Casteeamos al Alumno base dirigido de FabricaDeAlumnos
-
+            Alumno alumnoBase = (Alumno)base.crearAleatorio(); //Casteeamos al Alumno base dirigido de FabricaDeAlumnos
             // Cada decorador envuelve al anterior, Decorando asi el AlumnoBase
             IAlumno alumnoDecorado = new DecoPorLegajo(alumnoBase);
             alumnoDecorado = new DecoCalificacionLetras(alumnoDecorado);

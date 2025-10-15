@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Practica
 {
-    public class AlumnoMuyEstudioso : Alumno
+    public class AlumnoMuyEstudioso : Alumno, IAlumnoMuyEstudioso
     {
         public AlumnoMuyEstudioso(string n, string a, int d, int l, int p) : base(n, a, d, l, p)
         {

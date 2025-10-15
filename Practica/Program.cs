@@ -43,14 +43,19 @@ namespace Practica
             //Console.WriteLine("\n--- Fin del dictado de clases ---");
 
             //Ejercicio 4 y Ejercicio 8 con sus modificaciones(Practica 4) 
-            Teacher teacher = new Teacher();
-            AgregarStudent(teacher);
-            teacher.teachingAClass();
+            //Teacher teacher = new Teacher();
+            //AgregarStudent(teacher);
+            //teacher.teachingAClass();
 
             //Ejercicio 7(Practica 4) PRUEBA DE EJEMPLO
             //StudentsFactory fabrica = new StudentsFactory();
             //Student s = (Student)fabrica.crearAleatorio();
             //Console.WriteLine(s.showResult());
+
+            //Ejercicio 2(Practica 5) Reimplementacion del Ejercicio 4(Practica 4)
+            Teacher teacher = new Teacher();
+            AgregarStudent(teacher);
+            teacher.teachingAClass();
 
 
 
@@ -62,14 +67,16 @@ namespace Practica
 
         public static void AgregarStudent(Teacher teacher) // Agrega 20 Student(AlumnoAdapter), 10 Alumnos y 10 MuyEstudioso
         {
+            
             for (int i = 0; i < 10; i++)
             {
-                Student alumno = (Student)FabricaDeComparables.crearAleatorio(5); //Student
+                Student alumno = (Student)FabricaDeComparables.crearAleatorio(7); //StudentsProxy
                 teacher.goToClass(alumno);
             }
             for (int i = 0; i < 10; i++)
             {
-                Student alumno = (Student)FabricaDeComparables.crearAleatorio(6); //StudentMuyEstudiosos
+                Student alumno = (Student)FabricaDeComparables.crearAleatorio(8); //StudentsMuyESTProxy
+               
                 teacher.goToClass(alumno);
 
             }

@@ -35,7 +35,15 @@ namespace Practica
                 
                 case 6:
                     fabrica = new StudentsMuyEstudiososFactory();
-                    break; 
+                    break;
+
+                case 7:
+                    fabrica = new StudentsProxyFactory();
+                    break;
+                
+                case 8:
+                    fabrica = new StudentsMuyESTProxyFactory();
+                    break;
 
 
                 default:
@@ -74,6 +82,14 @@ namespace Practica
                 case 6:
                     fabrica = new StudentsMuyEstudiososFactory();
                     break; 
+                
+                case 7:
+                    fabrica = new StudentsProxyFactory();
+                    break;
+                
+                case 8:
+                    fabrica = new StudentsMuyESTProxyFactory();
+                    break;
 
                 default:
                     Console.WriteLine("Opcion invalida");
