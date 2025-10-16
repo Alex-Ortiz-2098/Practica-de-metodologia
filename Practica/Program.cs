@@ -53,12 +53,18 @@ namespace Practica
             //Console.WriteLine(s.showResult());
 
             //Ejercicio 2(Practica 5) Reimplementacion del Ejercicio 4(Practica 4)
-            Teacher teacher = new Teacher();
-            AgregarStudent(teacher);
-            teacher.teachingAClass();
+            //Teacher teacher = new Teacher();
+            //AgregarStudent(teacher);
+            //teacher.teachingAClass();
 
-
-
+            //Ejercicio 10 (Practica 5)
+            Pila pila = new Pila();
+            Aula aula = new Aula();
+            pila.setOrdenInicio(new OrdenInicio(aula));
+            pila.setOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
+            pila.setOrdenAulaLlena(new OrdenAulaLlena(aula));
+            Llenar(pila, 1); //Alumnos
+            Llenar(pila, 4);//Alumnos muy Estudiosos
 
 
             Console.WriteLine("Hola, mundo!");

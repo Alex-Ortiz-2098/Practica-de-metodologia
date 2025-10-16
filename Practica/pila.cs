@@ -3,9 +3,13 @@ using System.Collections.Generic;
 
 namespace Practica
 {
-    public class Pila : Coleccionable, Iterable
+    public class Pila : Coleccionable, Iterable, Ordenable
     {
         private List<Comparable> elementos;
+        private IOrdenEnAula1 ordenInicio;
+        private IOrdenEnAula2 ordenLlegaAlumno;
+        private IOrdenEnAula1 ordenAulaLlena;
+        // Constructor
 
         public Pila()
         {
@@ -42,6 +46,24 @@ namespace Practica
             }
             return null;
         }
+
+        // IMPLEMENTACION DE ORDENABLE
+
+        public void setOrdenInicio(IOrdenEnAula1 orden)
+        {
+            ordenInicio = orden;
+        }
+
+        public void setOrdenLlegaAlumno(IOrdenEnAula2 orden)
+        {
+            ordenLlegaAlumno = orden;
+        }
+
+        public void setOrdenAulaLlena(IOrdenEnAula1 orden)
+        {
+            ordenAulaLlena = orden;
+        }
+
 
         //  Implementacion de interface Coleccionable
 
@@ -82,8 +104,22 @@ namespace Practica
 
         public void Agregar(Comparable c)//  Agrega el elemento a a lista elementos
         {
-            elementos.Add(c);  // apilar
-        }
+            // Si es el primer elemento → ejecutar OrdenInicio
+            if (Cuantos() == 0 && ordenInicio != null)
+            ordenInicio.Ejecutar();
+
+            // Siempre que llegue un elemento → ejecutar OrdenLlegaAlumno
+            if (ordenLlegaAlumno != null)
+            ordenLlegaAlumno.Ejecutar(c);
+
+            // Agregar el elemento a la pila
+            elementos.Add(c);
+
+            // Si ahora la pila tiene 40 → ejecutar OrdenAulaLlena
+            if (Cuantos() == 40 && ordenAulaLlena != null)
+            ordenAulaLlena.Ejecutar();
+           
+        }//MODIFICACION CON LAS ORDENES
 
         //Implemento la Interface Iterable
 

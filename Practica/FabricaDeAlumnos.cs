@@ -8,7 +8,7 @@ namespace Practica
         public override Comparable crearAleatorio()
         {
             // Nombre, dni, legajo, Promedio
-            return new Alumno(DatoAle.stringAleatorio(10),DatoAle.stringAleatorio(10), DatoAle.numeroAleatorio(100000000), DatoAle.numeroAleatorio(1000), DatoAle.numeroAleatorio(10));
+            return new Alumno(DatoAle.stringAleatorio(10), DatoAle.stringAleatorio(10), DatoAle.numeroAleatorio(100000000), DatoAle.numeroAleatorio(1000), DatoAle.numeroAleatorio(10));
             // Cada llamada es independiente por ende se guarda el resultado sin interferir con la siguiente llamada
 
         }
